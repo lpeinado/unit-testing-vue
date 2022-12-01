@@ -1,12 +1,15 @@
-import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import AppHeader from "@/components/AppHeader.vue";
+import { mount } from "@vue/test-utils";
 
-describe("HelloWorld.vue", () => {
-  it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg },
-    });
-    expect(wrapper.text()).toMatch(msg);
+describe("Testing app header", () => {
+  test("shouldn't display button", () => {
+    const wrapper = mount(AppHeader);
+    expect(wrapper.find("button").isVisible()).toBe(false);
+  });
+  test("Should display button", async () => {
+    const wrapper = mount(AppHeader);
+    wrapper.setData({ loggedIn: true });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find("button").isVisible()).toBe(true);
   });
 });
