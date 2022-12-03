@@ -1,6 +1,9 @@
 <template>
   <div>
-    <button v-show="loggedIn">{{ message }}</button>
+    <button v-show="loggedIn" @click="showThing = !showThing">
+      {{ message }}
+    </button>
+    <span v-show="showThing" class="thing">Thing</span>
   </div>
 </template>
 
@@ -12,6 +15,7 @@ export default {
   data() {
     return {
       loggedIn: false,
+      showThing: false,
     };
   },
 };
