@@ -11,5 +11,8 @@ describe("LoginForm tests", () => {
 
     const calls = wrapper.emitted("formSubmitted");
     expect(calls).toHaveLength(1);
+
+    const paload = { name: "Lluís Peinado" };
+    expect(wrapper.emitted("formSubmitted")[0][0]).toMatchObject(paload);
   });
 });
