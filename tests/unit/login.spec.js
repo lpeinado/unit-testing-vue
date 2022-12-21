@@ -16,3 +16,18 @@ describe("LoginForm tests", () => {
     expect(calls[0][0]).toMatchObject(payload);
   });
 });
+
+describe("Another login form test", () => {
+  test("We put something in the box", () => {
+    const component = mount(LoginForm);
+    const input = component.find("input[type='text']");
+
+    input.setValue("Adriano Celentano")
+    //const button = component.find("button[type='submit']");
+    component.trigger("submit");
+
+    const emitted = component.emitted("formSubmitted");
+    expect(emitted).toHaveLength(1);
+
+  })
+})

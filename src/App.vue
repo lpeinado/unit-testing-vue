@@ -1,15 +1,26 @@
+/* eslint-disable */
+
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <AppHeader msg="Welcome to Your Vue.js App" />
+  <LoginForm @formSubmitted="doSomething"/>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AppHeader from "./components/AppHeader.vue";
+import LoginForm from "./components/LoginForm.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    AppHeader,
+    LoginForm,
+  },
+  setup(){
+    const doSomething = function({name}){
+      console.log("Doing something with:" + name )
+    }
+    return { doSomething }
   },
 };
 </script>
