@@ -12,4 +12,8 @@ describe("Testing app header", () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.find("button").isVisible()).toBe(true);
   });
+  test("should display a message", () => {
+    const component = mount(AppHeader, { propsData: { message: "Tio rasta" } });
+    expect(component.html()).toContain("Tio rasta");
+  });
 });

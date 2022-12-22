@@ -1,5 +1,7 @@
 <template>
   <div>
+    <div class="burro">BURRO {{ message }}</div>
+
     <button v-show="loggedIn" @click="showThing = !showThing">
       {{ message }}
     </button>

@@ -3,7 +3,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <AppHeader msg="Welcome to Your Vue.js App" />
-  <LoginForm @formSubmitted="doSomething"/>
+  <LoginForm @formSubmitted="doSomething" />
 </template>
 
 <script>
@@ -16,11 +16,11 @@ export default {
     AppHeader,
     LoginForm,
   },
-  setup(){
-    const doSomething = function({name}){
-      console.log("Doing something with:" + name )
-    }
-    return { doSomething }
+  setup() {
+    const doSomething = function ({ name }) {
+      console.log("Doing something with:" + name);
+    };
+    return { doSomething };
   },
 };
 </script>

@@ -22,12 +22,11 @@ describe("Another login form test", () => {
     const component = mount(LoginForm);
     const input = component.find("input[type='text']");
 
-    input.setValue("Adriano Celentano")
+    input.setValue("Adriano Celentano");
     //const button = component.find("button[type='submit']");
     component.trigger("submit");
 
     const emitted = component.emitted("formSubmitted");
     expect(emitted).toHaveLength(1);
-
-  })
-})
+  });
+});
